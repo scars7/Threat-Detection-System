@@ -48,7 +48,7 @@ void setup() {
     Serial.print(".");
     delay(300);
   }
-  Serial.println("\n✅ Wi-Fi connected: " + WiFi.localIP().toString());
+  Serial.println("\n Wi-Fi connected: " + WiFi.localIP().toString());
 
   // Set time for email timestamps (Nepal = UTC+5:45)
   configTime(20700, 0, "pool.ntp.org", "time.nist.gov");
@@ -57,7 +57,7 @@ void setup() {
     Serial.print(".");
     delay(500);
   }
-  Serial.println("\n⏰ Time synced!");
+  Serial.println("\n Time synced!");
 
   // Setup SMTP session
   smtp.debug(1);
@@ -110,7 +110,7 @@ void loop() {
     // Build the email message body
     String htmlBody =
       "<div style=\"font-family: Arial; color: #000;\">"
-      "<h2>🚨 Motion Detected!</h2>"
+      "<h2> Motion Detected!</h2>"
       "<p><strong>Time:</strong> " + String(timeString) + "</p>"
       "<p><strong>Status:</strong> Intrusion detected in the restricted zone.</p>"
       "<p>This alert was sent from your ESP32-based security system.</p>"
@@ -122,12 +122,12 @@ void loop() {
 
     // Send email alert
     if (!smtp.connect(&session)) {
-      Serial.println("❌ SMTP connection failed: " + smtp.errorReason());
+      Serial.println("SMTP connection failed: " + smtp.errorReason());
     } else {
       if (!MailClient.sendMail(&smtp, &message))
-        Serial.println("❌ Email send failed: " + smtp.errorReason());
+        Serial.println("Email send failed: " + smtp.errorReason());
       else
-        Serial.println("✅ Email sent successfully!");
+        Serial.println("Email sent successfully!");
       smtp.closeSession();
     }
 
