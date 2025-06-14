@@ -104,7 +104,7 @@ void loop() {
     struct tm* timeinfo = localtime(&now);
     char timeString[100];
     strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", timeinfo);
-    Serial.print("📅 Time of motion: ");
+    Serial.print("Time of motion: ");
     Serial.println(timeString);
 
     // Build the email message body
