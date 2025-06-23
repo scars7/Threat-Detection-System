@@ -18,9 +18,14 @@ An ESP32-based motion detection system that triggers a buzzer, LED indicators, a
 - Email alert with timestamp
 - Wi-Fi enabled (ESP32)
 
+
 ## Diagrams of the project
-circuit diagram - https://imgur.com/a/ukrhOfh
-schematic diagram - https://imgur.com/a/KOjsVma
+  **schematic diagram**
+![image](https://github.com/user-attachments/assets/905cc50f-db50-41a1-82ec-f606b88b1e8c)
+
+ **circuit diagram**
+ ![image](https://github.com/user-attachments/assets/ab115a84-812f-45b8-a763-9a818cf59540)
+
 
 ## How It Works
 - PIR sensor detects motion
